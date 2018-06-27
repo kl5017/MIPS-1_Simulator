@@ -1,0 +1,56 @@
+#ab5616 MIPS Assembly for test.bin's
+
+ADDU:
+	LUI 	$v0, 0xBF
+	ORI 	$v0,$v0 0xFF
+	LUI 	$v1, 0xBF
+	ORI 	$v1,$v1,0xFF
+	ADDU 	$v0,$v1,v0
+	JR 	$zero
+//126
+
+	LUI 	$v0, 0xF
+	ORI 	$v0,$v0 0xFF
+	LUI 	$v1, 0x5C
+	ORI 	$v1,$v1,0xFF
+	ADDU 	$v0,$v1,v0
+	JR 	$zero
+//107
+
+AND:
+	LUI 	$v0, 0xAC
+	ORI 	$v0,$v0 0xFF
+	LUI 	$v1, 0x24
+	ORI 	$v1,$v1,0xFF
+	AND 	$v0,$v1,v0
+	JR 	$zero
+//36
+
+OR :
+	LUI 	$v0, 0xAC
+	ORI 	$v0,$v0 0xFF
+	LUI 	$v1, 0x24
+	ORI 	$v1,$v1,0xFF
+	OR 	$v0,$v1,v0
+	JR 	$zero
+//172
+
+SLTU : f<7fff = 1
+
+SUBU1: bf-bf = 0
+SUBU2: 5C-F = 4D
+
+6XOR : A8^94 = 3C
+
+7ADD1: BFFF+BFFF = 246
+7ADD2: F+5C = 123
+
+8ADDI1:BFFF+BFFF = 246
+8ADDI2: F + 5C = 123
+
+9ADDIU1:8000+8000 = 0
+9ADDIU2: F + 5C = 120
+
+10ANDI; FFFF0000 & 0000FFFF = 0
+
+

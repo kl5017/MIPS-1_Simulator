@@ -1,0 +1,425 @@
+#mh3216 MIPS Assembly for test.bin's
+
+JR:0x0F
+	JR	$zero
+	ORI V0, V0, 0xF
+
+LW:
+	ROM:0x0B
+	ORI V1, V1, 0x000B
+	LUI	V0, 0x1000
+	JR	$zero
+	LW	V0, 0(V0)
+
+	# overide std in to 5
+	GETC:0x35
+	LUI V1, 0x3000
+	LW	V0, 0(V1)
+	JR	$zero
+	NOP
+
+SW:
+	RAM:0x0E
+	LUI	V0, 0x2000
+	ORI	V1, V1, 0x000E
+	SW	V1, 0(V0)
+	LW	V0, 0(V0)
+	JR	$zero
+	NOP
+	
+	# overide std out 
+	PUTC:0x43
+	LUI V1, 0x3000
+	ORI V0, V0, 0x0043
+	JR	$zero
+	SW	V0, 4(V1)
+
+BEQ:0d2
+	ORI V1, V1, 1
+	BEQ	V0, V1, 0x20
+8	ORI	V0, 2
+C	NOP
+	ORI V1, T1, 2
+	BEQ	V0, V1, 0x10
+18	NOP
+1C	JR	V0
+	NOP
+	NOP
+28	JR	$zero
+2C	NOP
+	
+BGEZ:0d50
+	LUI V1, 0x100F
+	BGEZ V1, 0x20
+8	ORI	V0, V0, 50
+C	NOP
+	LUI V1 0x7FFF
+	BGEZ V1, 0x10
+18	NOP
+1C	JR	V0
+	NOP
+	NOP
+28	JR	$zero
+2C	NOP
+
+BLTZ:0d25
+	LUI V1, 0x7FFF
+	BLTZ V1, 0x20
+8	ORI	V0, V0, 25
+C	NOP
+	LUI V1 0x100F
+	BLTZ V1, 0x10
+18	NOP
+1C	JR	V0
+	NOP
+	NOP
+28	JR	$zero
+2C	NOP
+	
+BGTZ:0d10
+	BGTZ V1, 0x34
+4	ORI	V0, V0, 60
+	NOP
+C	NOP
+	LUI V1 0x100E
+	BGTZ V1, 0x20
+18	ORI	V0, T1, 10
+1C	NOP
+	LUI V1, 00FF
+	BGTZ V1, 0x10
+28	NOP
+2C	JR	V0
+	NOP
+	NOP
+38	JR	$zero
+3C	NOP
+
+BLEZ:
+	Sign:0d23
+	LUI V1, 0x7FFF
+	BLEZ V1, 0x20
+8	ORI V0, V0, 23
+C	NOP
+	LUI V1, 0x1000
+	BLEZ V1, 0x10
+18	NOP
+1C	NOP
+	JR V0
+	NOP
+28	JR	$zero
+2C	NOP
+	
+	Zero:0d32
+	LUI V1, 0x7FFF
+	BLEZ V1, 0x20
+8	ORI V0, V0, 32
+C	NOP
+	LUI V1, 0x0000
+	BLEZ V1, 0x10
+18	NOP
+1C	NOP
+	JR V0
+	NOP
+28	JR	$zero
+2C	NOP
+	
+BNE:0x04
+	ORI V0, V0, 1
+	ORI V1, V1, 1
+	BNE V0, V1, 0x1C
+C	ORI V0, T1, 4
+	BNE V0, V1, 0x14
+14	NOP
+	JR	V0
+1C	NOP
+	NOP
+	NOP
+28	JR	$zero
+2C	NOP
+
+	LOOP:0x05
+	ORI V1, V1, 1
+	ORI T0, T0, 5
+8	ADDU V0. V0, V1
+C	BNE	V0, T0, 0xFFF8
+10	NOP
+	NOP
+	JR $ZERO
+1C	NOP	
+	
+LB:
+	ROM:0x85
+	ORI V1, V1, 0x8558
+	LUI	V0, 0x1000
+	JR	$zero
+	LB	V0, 2(V0)
+
+	# overide std in to N
+	GETC:0x4E
+	LUI V1, 0x3007
+	LB	V0, 0(V1)
+	JR	$zero
+	SLL V0, V0, 4
+	
+LBU:0x08
+	ORI V1, V1, 0x8F1F
+	LUI	V0, 0x2000
+	SW	V1, 0(V0)
+	LBU	V1, 2(V0)
+	SLL V0, V1, 4
+	JR $zero
+	NOP
+	NOP
+	
+	# overide std in to M
+	GETC:0x4D
+	LUI V1, 0x3000
+	LBU	V0, 3(V1)
+	JR	$zero
+	SLL V0, V0, 4
+
+LH:0xF8
+	LUI V1, 0x8FFF
+	ORI V0, V0, 0x1000
+	LH	V0, 2(V0)
+	SLL	V0, V0, 12
+	JR	$zero
+	NOP
+
+	# overide std in to V
+	GETC:0x56
+	LUI V1, 0x3000
+	LH	V0, 2(V1)
+	JR	$zero
+	SLL V0, V0, 4
+	
+LHU:0x0F
+	LUI V1, 0xFFFF
+	ORI V0, V0, 0x1000
+	LHU	V0, 2(V0)
+	SLL	V0, V0, 12
+	JR	$zero
+	NOP
+
+SB:
+	RAM:0x8F
+	LUI V1, 0x2000
+	ORI	V0, V0, 0x438F
+	SB 	V0, 3(V1)
+	LW	V0, 0(V1)
+	JR	$zero
+	NOP
+	
+	// overide std out
+	PUTC:0x46
+	LUI V1, 0x3000
+	ORI V0, V0, 0x46
+	JR	$zero
+	SB	V0, 7(V1)
+	
+SH:
+	RAM:0x43
+	LUI V1, 0x2000
+	ORI	V0, V0, 0x4312
+	SH	V0, 2(V1)
+	LW	V0, 0(V1)
+	JR	$zero
+	SLL	V0, V0, 4
+	
+	// overide std out
+	PUTC:0x56
+	LUI V1, 0x3000
+	ORI V0, V0, 0xFF56
+	JR	$zero
+	SH	V0, 6(V1)
+
+J:0x44
+	J 	0xC
+4	NOP
+	JR	$zero
+C	NOP
+	ORI	V0, V0, 0x0044
+	NOP
+	JR	$zero
+1C	NOP
+
+MFHI:0x78
+	LUI V1, 0x78
+	MTHI V1
+	JR	$zero
+	MFHI V0
+	
+MFLO;0x79
+	LUI V1, 0x79
+	MTLO V1
+	JR $zero
+	MFLO V0
+
+MTHI:0x77
+	LUI V1, 0x77
+	MTHI V1
+	JR	$zero
+	MFHI V0
+
+MTLO:0x76
+	LUI V1, 0x76
+	MTLO V1
+	JR $zero
+	MFLO V0
+
+BGEZAL:0x08
+	BGEZAL V1, 0xC
+	NOP
+	JR	$zero
+C	ORI V0, ra, 0xFF 
+10	JR	$ra
+	NOP
+
+BLTZAL:0x0C
+	LUI V1, 0x8000
+	BLTZAL V1, 0xC
+	NOP
+C	JR	$zero
+	ORI V0, ra, 0xFF 
+14	JR	$ra
+	NOP
+	NOP
+
+JAL:0x54
+	JAL 0x14
+	NOP
+	ORI, V0, V0, 0x54
+C	JR	$zero
+	NOP
+	JR ra
+	NOP
+1C	NOP
+	
+JALR:0x57
+	LUI V1, 0x1000
+	ORI V1, V1, 0x18
+	JALR V1
+C	NOP
+	JR $zero
+	ORI V0, V0, 0x57
+	JR ra
+1C	NOP	
+
+LWL:
+	0 off: 0x12
+	LUI V1, 0x2000
+	LUI V0, 0x1234
+	ORI V0, V0, 0x5678
+C	SW V0, 0(V1)
+	LWL V0, 0(V1)
+	SLL	V0, V0, 24
+	JR $zero
+	NOP
+
+	1 off: 0x34
+	LUI V1, 0x2000
+	LUI V0, 0x1234
+	ORI V0, V0, 0x5678
+C	SW V0, 0(V1)
+	LWL V0, 1(V1)
+	SLL V0, V0, 24
+	JR $zero
+	NOP
+
+	2 off: 0x56
+	LUI V1, 0x2000
+	LUI V0, 0x1234
+	ORI V0, V0, 0x5678
+C	SW V0, 0(V1)
+	LWL V0, 2(V1)
+	SLL V0, V0, 24
+	JR $zero
+	NOP
+
+	3 off: 0x78
+	LUI V1, 0x2000
+	LUI V0, 0x1234
+	ORI V0, V0, 0x5678
+C	SW V0, 0(V1)
+	LWL V0, 3(V1)
+	SLL V0, V0, 24
+	JR $zero
+	NOP
+
+LWR:
+	0 off: 0x12
+	LUI V1, 0x2000
+	LUI V0, 0x1234
+	ORI V0, V0, 0x5678
+C	SW V0, 0(V1)
+	LWR V0, 0(V1)
+	NOP
+	JR $zero
+	NOP
+
+	1 off: 0x34
+	LUI V1, 0x2000
+	LUI V0, 0x1234
+	ORI V0, V0, 0x5678
+C	SW V0, 0(V1)
+	LWR V0, 1(V1)
+	NOP
+	JR $zero
+	NOP
+
+	2 off: 0x56
+	LUI V1, 0x2000
+	LUI V0, 0x1234
+	ORI V0, V0, 0x5678
+C	SW V0, 0(V1)
+	LWR V0, 2(V1)
+	NOP
+	JR $zero
+	NOP
+
+	3 off: 0x78
+	LUI V1, 0x2000
+	LUI V0, 0x1234
+	ORI V0, V0, 0x5678
+C	SW V0, 0(V1)
+	LWR V0, 3(V1)
+	NOP
+	JR $zero
+	NOP
+
+MULT:
+	+-: 0xFF
+	LUI V1, 0xFFFF
+	ORI V1, V1, 0xFFFF
+	ORI V0, V0, 0x1
+C	MULT V0, V1
+	MFHI V0
+	MFLO V1
+	AND V0, V0, V1
+1C	SLL V0, V0, 24
+	JR $zero
+	NOP
+
+	--: 0x01
+	LUI V1, 0xFFFF
+	ORI V1, V1, 0xFFFF
+	LUI V0, 0xFFFF
+C	ORI V0, V0, 0xFFFF
+	MULT V0, V1
+	MFLO V0
+	JR $zero
+1C	NOP
+
+MULTU:0x01
+	LUI V1, 0x8000
+	ORI V0, 0x0002
+	MULT V0, V1
+C	NOP
+	MFHI V1
+	MFLO V0
+	JR $zero
+1C	OR V0, V0, V1
+	
+
+
+

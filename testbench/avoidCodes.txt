@@ -1,0 +1,7 @@
+245
+246
+244
+236
+235
+
+Test exit should not match these in 8bit ubinary

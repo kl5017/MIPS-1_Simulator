@@ -1,0 +1,44 @@
+2_1 , JR , TRI , mh3216 15
+12_1 , LW , TRI , mh3216 11
+12_2 , LW , TRI , mh3216 53 (std in: test12_2.txt)
+20_1 , SW , TRI , mh3216 14
+20_2 , SW , TRI , mh3216 (std out: C) (sent to exitCodes.txt)
+22_1 , BEQ , TRI , mh3216 2
+23_1 , BGEZ , TRI , mh3216 50
+24_1 , BLTZ , TRI , mh3216 25
+25_1 , BGTZ , TRI , mh3216 10
+26_1 , BLEZ , TRI , mh3216 23
+26_2 , BLEZ , TRI , mh3216 32
+27_1 , BNE , TRI , mh3216 4
+27_2 , BNE , TRI , mh3216 5
+28_1 , J , TRI, mh3216 68
+29_1 , LB , TRI , mh3216 133
+29_2 , LB , TRI , mh3216  78 (std in: test29_2.txt)
+30_1 , LBU , TRI , mh3216 8
+30_2 , LBU , TRI , mh3216 77 (std in: test30_2.txt)
+31_1 , LH , TRI , mh3216 248
+31_2 , LH , TRI , mh3216 86 (std in: test31_2.txt)
+32_1 , LHU , TRI , mh3216 15
+33_1 , MFHI , TRI , mh3216 120
+34_1 , MFLO , TRI , mh3216 121
+35_1 , MTHI , TRI , mh3216 119
+36_1 , MTLO , TRI , mh3216 118
+37_1 , SB , TRI , mh3216 143
+37_2 , SB , TRI , mh3216 (std out: F) (sent to exitCodes.txt)
+38_1 , SH , TRI , mh3216 67
+38_2 , SH , TRI , mh3216 (std out: V) (sent to exitCodes.txt)
+43_1 , BGEZAL , TRI , mh3216 8 
+44_1 , BLTZAL , TRI , mh3216 12
+47_1 , JALR , TRI , mh3216 87
+48_1 , JAL , TRI , mh3216 84
+49_1 , MULT , TRI , mh3216 255
+49_2 , MULT , TRI , mh3216 1
+50_1 , MULTU , TRI , mh3216 1
+51_1 , LWL , TRI , mh3216 18
+51_2 , LWL , TRI , mh3216 52
+51_3 , LWL , TRI , mh3216 86
+51_4 , LWL , TRI , mh3216 120
+52_1 , LWR , TRI , mh3216 18
+52_2 , LWR , TRI , mh3216 52
+52_3 , LWR , TRI , mh3216 86
+52_4 , LWR , TRI , mh3216 120

@@ -1,0 +1,326 @@
+#!/bin/bash
+
+
+#clean directory for new test
+rm  ./test/output/exitCodes.txt
+
+
+	# use sim for simulator exectuable - first arg passed in
+	sim=$1	
+
+	# pass echo $? for each test into txt file
+	touch ./test/output/exitCodes.txt
+
+	# Tests
+
+		# test 0_1
+		$sim testbench/test0_1.bin
+		echo $?	>> test/output/exitCodes.txt
+
+		# test 0_2
+		$sim testbench/test0_2.bin
+		echo $?	>> test/output/exitCodes.txt
+
+		# test 1_1
+		$sim testbench/test1_1.bin
+		echo $?	>> test/output/exitCodes.txt
+
+		# test 2_1
+		$sim testbench/test2_1.bin
+		echo $?	>> test/output/exitCodes.txt
+
+		# test 3_1
+		$sim testbench/test3_1.bin
+		echo $?	>> test/output/exitCodes.txt
+	
+		# test 4_1
+		$sim testbench/test4_1.bin
+		echo $?	>> test/output/exitCodes.txt
+	
+		# test 5_1
+		$sim testbench/test5_1.bin
+		echo $?	>> test/output/exitCodes.txt
+
+		# test 5_2
+		$sim testbench/test5_2.bin
+		echo $?	>> test/output/exitCodes.txt
+
+		# test 6_1
+		$sim testbench/test6_1.bin
+		echo $?	>> test/output/exitCodes.txt
+
+		# test 7_1
+		$sim testbench/test7_1.bin
+		echo $?	>> test/output/exitCodes.txt
+
+		# test 7_2
+		$sim testbench/test7_2.bin
+		echo $?	>> test/output/exitCodes.txt
+		
+		# test 8_1
+		$sim testbench/test8_1.bin
+		echo $?	>> test/output/exitCodes.txt
+
+		# test 8_2
+		$sim testbench/test8_2.bin
+		echo $?	>> test/output/exitCodes.txt
+
+		# test 9_1
+		$sim testbench/test9_1.bin
+		echo $?	>> test/output/exitCodes.txt
+
+		# test 9_2
+		$sim testbench/test9_2.bin
+		echo $?	>> test/output/exitCodes.txt
+
+		# test 10_1
+		$sim testbench/test10_1.bin
+		echo $?	>> test/output/exitCodes.txt
+	
+		# test 11_1
+		$sim testbench/test11_1.bin
+		echo $?	>> test/output/exitCodes.txt
+
+		# test 12_1
+		$sim testbench/test12_1.bin
+		echo $?	>> test/output/exitCodes.txt
+
+		# test 12_2 cat for getc
+		cat testbench/test12_2.txt | $sim testbench/test12_2.bin
+		echo $?	>> test/output/exitCodes.txt
+
+		# test 13_1
+		$sim testbench/test13_1.bin
+		echo $?	>> test/output/exitCodes.txt
+
+		# test 14_1
+		$sim testbench/test14_1.bin
+		echo $?	>> test/output/exitCodes.txt
+	
+		# test 14_2
+		$sim testbench/test14_2.bin
+		echo $?	>> test/output/exitCodes.txt
+
+		# test 15_1
+		$sim testbench/test15_1.bin
+		echo $?	>> test/output/exitCodes.txt
+
+		# test 16_1
+		$sim testbench/test16_1.bin
+		echo $?	>> test/output/exitCodes.txt
+
+		# test 17_1
+		$sim testbench/test17_1.bin
+		echo $?	>> test/output/exitCodes.txt
+
+		# test 18_1
+		$sim testbench/test18_1.bin
+		echo $?	>> test/output/exitCodes.txt
+
+		# test 19_1
+		$sim testbench/test19_1.bin
+		echo $?	>> test/output/exitCodes.txt
+	
+		# test 19_2
+		$sim testbench/test19_2.bin
+		echo $?	>> test/output/exitCodes.txt
+
+		# test 20_1
+		$sim testbench/test20_1.bin
+		echo $?	>> test/output/exitCodes.txt
+
+		# test 20_1
+		$sim testbench/test20_2.bin >> test/output/exitCodes.txt 
+		echo >> test/output/exitCodes.txt
+
+		# test 21_1
+		$sim testbench/test21_1.bin
+		echo $?	>> test/output/exitCodes.txt
+
+		# test 22_1
+		$sim testbench/test22_1.bin
+		echo $?	>> test/output/exitCodes.txt
+
+		# test 23_1
+		$sim testbench/test23_1.bin
+		echo $?	>> test/output/exitCodes.txt
+
+		# test 24_1
+		$sim testbench/test24_1.bin
+		echo $?	>> test/output/exitCodes.txt
+
+		# test 25_1
+		$sim testbench/test25_1.bin
+		echo $?	>> test/output/exitCodes.txt
+
+		# test 26_1
+		$sim testbench/test26_1.bin
+		echo $?	>> test/output/exitCodes.txt
+
+		# test 26_2
+		$sim testbench/test26_2.bin
+		echo $?	>> test/output/exitCodes.txt
+
+		# test 27_1
+		$sim testbench/test27_1.bin
+		echo $?	>> test/output/exitCodes.txt
+
+		# test 27_2
+		$sim testbench/test27_2.bin
+		echo $?	>> test/output/exitCodes.txt
+
+		# test 28_1
+		$sim testbench/test28_1.bin
+		echo $?	>> test/output/exitCodes.txt
+
+		# test 29_1
+		$sim testbench/test29_1.bin
+		echo $?	>> test/output/exitCodes.txt
+
+		# test 29_2
+		cat testbench/test29_2.txt | $sim testbench/test29_2.bin
+		echo $?	>> test/output/exitCodes.txt
+
+		# test 30_1
+		$sim testbench/test30_1.bin
+		echo $?	>> test/output/exitCodes.txt
+
+		# test 30_2
+		cat testbench/test30_2.txt | $sim testbench/test30_2.bin
+		echo $?	>> test/output/exitCodes.txt
+
+		# test 31_1
+		$sim testbench/test31_1.bin
+		echo $?	>> test/output/exitCodes.txt
+
+		# test 31_2
+		cat testbench/test31_2.txt | $sim testbench/test31_2.bin
+		echo $?	>> test/output/exitCodes.txt
+
+		# test 32_1
+		$sim testbench/test32_1.bin
+		echo $?	>> test/output/exitCodes.txt
+
+		# test 33_1
+		$sim testbench/test33_1.bin
+		echo $?	>> test/output/exitCodes.txt
+		
+		# test 34_1
+		$sim testbench/test34_1.bin
+		echo $?	>> test/output/exitCodes.txt
+
+		# test 35_1
+		$sim testbench/test35_1.bin
+		echo $?	>> test/output/exitCodes.txt
+
+		# test 36_1
+		$sim testbench/test36_1.bin
+		echo $?	>> test/output/exitCodes.txt
+
+		# test 37_1
+		$sim testbench/test37_1.bin
+		echo $?	>> test/output/exitCodes.txt
+		
+		# test 37_2
+		$sim testbench/test37_2.bin >> test/output/exitCodes.txt 
+		echo >> test/output/exitCodes.txt
+
+		# test 38_1
+		$sim testbench/test38_1.bin
+		echo $?	>> test/output/exitCodes.txt
+		
+		# test 38_2
+		$sim testbench/test38_2.bin >> test/output/exitCodes.txt 
+		echo >> test/output/exitCodes.txt
+		
+		# test 39_1
+		$sim testbench/test39_1.bin
+		echo $?	>> test/output/exitCodes.txt
+	
+		# test 40_1
+		$sim testbench/test40_1.bin
+		echo $?	>> test/output/exitCodes.txt
+
+		# test 41_1
+		$sim testbench/test41_1.bin
+		echo $?	>> test/output/exitCodes.txt
+
+		# test 42_1
+		$sim testbench/test42_1.bin
+		echo $?	>> test/output/exitCodes.txt
+
+		# test 43_1
+		$sim testbench/test43_1.bin
+		echo $?	>> test/output/exitCodes.txt
+
+		# test 44_1
+		$sim testbench/test44_1.bin
+		echo $?	>> test/output/exitCodes.txt
+
+		# test 47_1
+		$sim testbench/test47_1.bin
+		echo $?	>> test/output/exitCodes.txt
+
+		# test 48_1
+		$sim testbench/test48_1.bin
+		echo $?	>> test/output/exitCodes.txt
+
+		# test 49_1
+		$sim testbench/test49_1.bin
+		echo $?	>> test/output/exitCodes.txt
+
+		# test 49_2
+		$sim testbench/test49_2.bin
+		echo $?	>> test/output/exitCodes.txt
+
+		# test 50_1
+		$sim testbench/test50_1.bin
+		echo $?	>> test/output/exitCodes.txt
+
+		# test 51_1
+		$sim testbench/test51_1.bin
+		echo $?	>> test/output/exitCodes.txt
+
+		# test 51_2
+		$sim testbench/test51_2.bin
+		echo $?	>> test/output/exitCodes.txt
+
+		# test 51_3
+		$sim testbench/test51_3.bin
+		echo $?	>> test/output/exitCodes.txt
+
+		# test 51_4
+		$sim testbench/test51_4.bin
+		echo $?	>> test/output/exitCodes.txt
+
+		# test 52_1
+		$sim testbench/test52_1.bin
+		echo $?	>> test/output/exitCodes.txt
+
+		# test 52_2
+		$sim testbench/test52_2.bin
+		echo $?	>> test/output/exitCodes.txt
+
+		# test 52_3
+		$sim testbench/test52_3.bin
+		echo $?	>> test/output/exitCodes.txt
+
+		# test 52_4
+		$sim testbench/test52_4.bin
+		echo $?	>> test/output/exitCodes.txt
+
+		
+
+# c++ program to compare two text files and output CSV format
+# FORMAT
+# executable templatecsv expected results
+
+#Compile fillCSV.cpp to test/temp
+g++ -std=c++11 -Wall testbench/fillCSV.cpp -o fillCSV
+
+
+./fillCSV ./testbench/tests.csv ./testbench/expectedCodes.txt ./test/output/exitCodes.txt
+
+# fillCSV outouts to std out
+
+rm fillCSV
